@@ -39,6 +39,7 @@ md_description = "Open your JetBrains projects"
 md_license = "MIT"
 md_url = "https://github.com/albertlauncher/albert-plugin-python-jetbrains-projects"
 md_authors = ["@tomsquest", "@vmaerten", "@ManuelSchneid3r", "@d3v2a"]
+md_maintainers = ["@tomsquest", "@vmaerten", "@albi005"]
 
 
 @dataclass
