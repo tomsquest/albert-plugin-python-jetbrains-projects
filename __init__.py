@@ -32,7 +32,7 @@ from sys import platform
 from xml.etree import ElementTree
 from albert import *
 
-md_iid = "3.0"
+md_iid = "4.0"
 md_version = "4.2"
 md_name = "Jetbrains projects"
 md_description = "Open your JetBrains projects"
@@ -263,7 +263,7 @@ class Plugin(PluginInstance, TriggerQueryHandler):
             text=project.name,
             subtext=project.path,
             inputActionText=project.name,
-            iconUrls=["file:" + str(editor.icon)],
+            iconFactory=lambda: makeImageIcon(str(editor.icon)),
             actions=[
                 Action(
                     "Open",
