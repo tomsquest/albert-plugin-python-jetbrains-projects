@@ -1,38 +1,7 @@
 # -*- coding: utf-8 -*-
+# Copyright (c) 2024 Manuel Schneider
 # Copyright (c) 2018-2023 Thomas Queste
 # Copyright (c) 2023 Valentin Maerten
-
-"""
-This plugin allows you to quickly open projects of the Jetbrains IDEs
-
-- Android Studio
-- Aqua
-- CLion
-- DataGrip
-- DataSpell
-- GoLand
-- IntelliJ IDEA
-- PhpStorm
-- PyCharm
-- Rider
-- RubyMine
-- RustRover
-- WebStorm
-- Writerside.
-
-Notes:
-
-- The plugin only lists projects that still exist on disk.
-- The projects are sorted by last opened.
-- You can enable fuzzy matching in the plugin settings.
-- You can choose to match the project path in addition to the project name in the plugin settings
-- For this plugin to find the IDEs, a commandline launcher in $PATH is required.
-  Open the IDE and click Tools -> Create Command-line Launcher to add one.
-- The plugin reads the recent projects from the configuration directory of the IDEs.
-  On Linux, this is usually ~/.config/JetBrains/<product><version>.
-  On macOS, this is usually ~/Library/Application Support/JetBrains/<product><version>.
-  If you have a custom config directory, the best solution is to create a symlink in the default location.
-"""
 
 from dataclasses import dataclass
 from pathlib import Path
@@ -48,6 +17,7 @@ md_name = "Jetbrains projects"
 md_description = "Open your JetBrains projects"
 md_license = "MIT"
 md_url = "https://github.com/albertlauncher/albert-plugin-python-jetbrains-projects"
+md_readme_url = "https://github.com/albertlauncher/albert-plugin-python-jetbrains-projects/blob/main/README.md"
 md_authors = ["@tomsquest", "@vmaerten", "@ManuelSchneid3r", "@d3v2a"]
 md_maintainers = ["@tomsquest", "@vmaerten", "@albi005"]
 
@@ -299,12 +269,5 @@ class Plugin(PluginInstance, TriggerQueryHandler):
                 'type': 'checkbox',
                 'property': 'match_path',
                 'label': 'Match path'
-            },
-            {
-                'type': 'label',
-                'text': __doc__.strip(),
-                'widget_properties': {
-                    'textFormat': 'Qt::MarkdownText'
-                }
             }
         ]
