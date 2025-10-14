@@ -250,8 +250,8 @@ class Plugin(PluginInstance, TriggerQueryHandler):
             id="%s-%s-%s" % (editor.binary, project.path, project.last_opened),
             text=project.name,
             subtext=project.path,
-            inputActionText=project.name,
-            iconFactory=lambda: makeImageIcon(str(editor.icon)),
+            input_action_text=project.name,
+            icon_factory=lambda: makeImageIcon(str(editor.icon)),
             actions=[
                 Action(
                     "Open",
